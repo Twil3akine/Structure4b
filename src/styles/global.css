@@ -4,3 +4,7 @@
     box-sizing: border-box;
     font-family: "Ubuntu Sans Mono", "Noto Sans JP", monospace;
 }
+
+h1 {
+    font-weight: 400;
+}

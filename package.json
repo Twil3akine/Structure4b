@@ -1,5 +1,5 @@
 {
-  "name": "structure",
+  "name": "structure4b",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -11,5 +11,8 @@
   "dependencies": {
     "@astrojs/mdx": "^4.2.3",
     "astro": "^5.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0"
   }
 }
