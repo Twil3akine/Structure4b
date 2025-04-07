@@ -1,48 +1,44 @@
-# Astro Starter Kit: Basics
+# Structure4b
 
-```sh
-npm create astro@latest -- --template basics
+**Structure4b** は、基礎的なアルゴリズムとデータ構造の仕組みを解説し、C言語による実装を通して理解を深めるための教材プロジェクトです。
+
+## 📘 概要
+
+このプロジェクトでは、以下のことを目的としています：
+
+- データ構造（リスト、スタック、キュー、木構造など）の基礎理解
+- アルゴリズム（探索、ソート、再帰処理など）の基本的な考え方の習得
+- C言語を用いた実装による実践的な理解
+
+## 📂 内容
+
+本プロジェクトには以下のコンテンツが含まれます：
+
+- 🧱 **データ構造の解説**  
+  単方向リスト、スタック、キュー、二分木など
+
+- 🔁 **アルゴリズムの実装**  
+  ソートアルゴリズム、バイナリサーチ、DFS/BFSなど
+
+- 💡 **図とコードでわかる解説**  
+  説明 → コード → 実行結果 の順で学びやすく構成
+
+## 🧑‍💻 使用技術
+
+- C言語（標準ライブラリベース）
+- [Astro](https://astro.build/) + MDX によるドキュメント構成
+- モダンなレスポンシブレイアウト（CSS Grid + メディアクエリ）
+
+## 🚀 開発環境で見るには
+
+```bash
+# リポジトリをクローン
+git clone https://github.com/twil3akine/Structure4b.git
+cd Structure4b
+
+# 依存をインストール
+npm install
+
+# 開発サーバ起動
+npm run dev
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
