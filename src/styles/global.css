@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    font-family: "Ubuntu Sans Mono", "Noto Sans JP", monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+/* 見出し・段落・リスト間の余白を調整 */
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+ul, ol {
+    padding-left: 1.25rem;
+}
+h1, h2 {
+    font-weight: 400;
+}
+
+/* レスポンシブ対応 */
+.responsive-container {
+    display: grid;
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+@media (max-aspect-ratio: 4/2) {
+    .responsive-container {
+        grid-template-columns: 1fr;
+        max-width: 725px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-aspect-ratio: 4/2) {
+    .responsive-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin: 0;
+    }
+}
