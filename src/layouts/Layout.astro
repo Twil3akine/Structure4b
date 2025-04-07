@@ -6,11 +6,15 @@ import "@/styles/global.css"
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+		<lin
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+			rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>データ構造とアルゴリズム入門</title>
 	</head>
 	<body>
-		<slot />
+		<div class="responsive-container">
+			<slot />
+		</div>
 	</body>
 </html>
