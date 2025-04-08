@@ -7,7 +7,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "wrangler deploy --assets=./dist"
+    "deploy": "npx wrangler deploy --assets=./dist"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.4.0",

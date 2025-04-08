@@ -3,5 +3,7 @@ account_id = "63913da2f930251ebbbf2dcb940b90dc"
 compatibility_date = "2025-04-08"
 workers_dev = true
 
+main = "dist/_worker.js"
+
 [build]
 command = "npm run build"
