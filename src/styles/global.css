@@ -1,39 +1,85 @@
+:root {
+    --font-primary: "Ubuntu Sans Mono", "Noto Sans JP", monospace;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --list-indent: 1.25rem;
+    --max-width-narrow: 725px;
+    --font-weight-heading: 400;
+    --container-gap: 1rem;
+    --container-padding: 1rem;
+
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --link-color: #55e;
+}
+
+*[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+}
+
 * {
     box-sizing: border-box;
-    font-family: "Ubuntu Sans Mono", "Noto Sans JP", monospace;
+    font-family: var(--font-primary);
 }
 
 body {
     margin: 0;
     padding: 0;
     display: block;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 /* 見出し・段落・リスト間の余白を調整 */
 h1, h2, h3, h4, h5, h6,
 p, ul, ol, li {
     margin-top: 0;
-    margin-bottom: 0.5rem;
-}
-ul, ol {
-    padding-left: 1.25rem;
-}
-h1, h2 {
-    font-weight: 400;
+    margin-bottom: var(--spacing-sm);
 }
 
-/* レスポンシブ対応 */
+ul, ol {
+    padding-left: var(--list-indent);
+}
+
+h1, h2 {
+    font-weight: var(--font-weight-heading);
+}
+
+a {
+    color: var(--link-color);
+}
+
 .responsive-container {
     display: grid;
     width: 100%;
-    padding: 1rem;
-    gap: 1rem;
+    padding: var(--container-padding);
+    gap: var(--container-gap);
+}
+
+.toggle-theme {
+    display: block;
+    padding: .25rem; margin: 0;
+    position: fixed;
+    width: 2rem; height: 2rem;
+    top: var(--list-indent); right: var(--list-indent);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s;
+    background-color: transparent;
+    border-radius: 0.25rem;
+}
+
+.toggle-theme:hover {
+    color: var(--bg-color);
+    background-color: var(--text-color);
 }
 
 @media (max-aspect-ratio: 4/2) {
     .responsive-container {
         grid-template-columns: 1fr;
-        max-width: 725px;
+        max-width: var(--max-width-narrow);
         margin: 0 auto;
     }
 }
