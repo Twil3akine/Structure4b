@@ -9,7 +9,7 @@ import svgr from 'vite-plugin-svgr';
 
 // https://astro.build/config
 export default defineConfig({
-    output: 'static',
+    output: 'server',
     // @ts-ignore
     adapter: cloudflare(),
     integrations: [
@@ -38,6 +38,7 @@ export default defineConfig({
         resolve: {
             alias: {
                 '@': fileURLToPath(new URL('./src', import.meta.url)),
+                ...(import.meta.env.PROD ? { 'react-dom/server' : 'react-dom/server.edge' } : {}),
             }
         },
         plugins: [
