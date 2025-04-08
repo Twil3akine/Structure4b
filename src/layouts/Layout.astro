@@ -1,6 +1,7 @@
 ---
 import "@/styles/global.css"
 import ToggleTheme from "@/components/toggleTheme"
+import type { only } from "node:test"
 ---
 
 <html lang="ja">
@@ -15,7 +16,7 @@ import ToggleTheme from "@/components/toggleTheme"
 	</head>
 	<body>
 		<div class="responsive-container">
-			<ToggleTheme client:load />
+			<ToggleTheme client:only="react" />
 			<slot />
 		</div>
 	</body>
