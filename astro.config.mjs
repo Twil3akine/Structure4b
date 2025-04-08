@@ -1,9 +1,11 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
+import react from '@astrojs/react';
 // @ts-ignore
 import { fileURLToPath } from 'url';
 import cloudflare from '@astrojs/cloudflare';
+import svgr from 'vite-plugin-svgr';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,6 +13,7 @@ export default defineConfig({
     adapter: cloudflare(),
     integrations: [
         mdx(),
+        react(),
     ],
     markdown: {
         shikiConfig: {
@@ -31,6 +34,9 @@ export default defineConfig({
             alias: {
                 '@': fileURLToPath(new URL('./src', import.meta.url)),
             }
-        }
+        },
+        plugins: [
+            svgr(),
+        ]
     }
 });
