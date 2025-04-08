@@ -11,7 +11,10 @@ import svgr from 'vite-plugin-svgr';
 export default defineConfig({
     output: 'server',
     // @ts-ignore
-    adapter: cloudflare(),
+    adapter: cloudflare({
+        // @ts-ignore
+        mode: 'advandes',
+    }),
     integrations: [
         mdx(),
         react({
@@ -28,6 +31,7 @@ export default defineConfig({
         },
     },
     vite: {
+        base: '/',
         server: {
             host: '0.0.0.0',
             watch: {
