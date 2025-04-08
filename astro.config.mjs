@@ -10,10 +10,15 @@ import svgr from 'vite-plugin-svgr';
 // https://astro.build/config
 export default defineConfig({
     output: 'server',
+    // @ts-ignore
     adapter: cloudflare(),
     integrations: [
         mdx(),
-        react(),
+        react({
+            // @ts-ignore
+            jsxImportSource: 'react',
+            renderer: '@astrojs/react/renderer',
+        }),
     ],
     markdown: {
         shikiConfig: {
