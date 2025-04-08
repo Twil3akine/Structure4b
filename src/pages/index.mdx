@@ -1,14 +1,29 @@
 import Layout from "@/layouts/Layout.astro";
 import AllList from "@/components/AllList.mdx";
+import Notion from "@/components/Notion.astro";
 
 <Layout>
 
-# データ構造とアルゴリズム入門
+	# データ構造とアルゴリズム入門
 
-## はじめに
+	## はじめに
 
-本書では、基礎的なデータ構造やアルゴリズムの仕組みをしながら、C言語を用いた実装を行います。
+	本書では、以下の基礎的なデータ構造やアルゴリズムの仕組みをしながら、C言語を用いた実装を行います。
 
-<AllList />
+	<AllList />
+
+	C言語は、他のモダン言語に比べて、不自由なところが多い言語ですが、データ構造とアルゴリズムを学ぶ上ではその不自由さがプラスにすると考えております。
+
+	ソースコードは、[リポジトリ](https://github.com/twil3akine/structure4b/programs)にて公開していますので、是非ご活用ください。
+
+	<Notion caution>
+		本書は
+
+		- C言語の文法程度は理解している方
+		- データ構造とアルゴリズムを学びたい方
+
+		を読者として想定しています。
+		
+	</Notion>
 
 </Layout>
