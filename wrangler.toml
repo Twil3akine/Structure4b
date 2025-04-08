@@ -1,0 +1,7 @@
+name = "structure4b"
+account_id = "63913da2f930251ebbbf2dcb940b90dc"
+compatibility_date = "2025-04-08"
+workers_dev = true
+
+[build]
+command = "npm run build"
