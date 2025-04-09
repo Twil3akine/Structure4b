@@ -13,11 +13,6 @@
     --link-color: #55e;
 }
 
-*[data-theme="dark"] {
-    --bg-color: #121212;
-    --text-color: #e0e0e0;
-}
-
 * {
     box-sizing: border-box;
     font-family: var(--font-primary);

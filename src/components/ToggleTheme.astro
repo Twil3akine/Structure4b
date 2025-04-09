@@ -1,0 +1,78 @@
+---
+import '@/styles/global.css';
+---
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>theme toggle</title>
+    <style>
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #000000;
+      }
+      [data-theme="dark"] {
+        --bg-color: #000000;
+        --text-color: #ffffff;
+      }
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .theme-toggle {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        padding: 0.5rem 1rem;
+        border: none;
+        cursor: pointer;
+        transition: all .15s;
+        border-radius: 1rem;
+      }
+      .theme-toggle:hover {
+        background-color: var(--text-color);
+        color: var(--bg-color);
+      }
+    </style>
+  </head>
+
+  <body data-theme="light">
+    <button class="theme-toggle" id="theme-toggle">テーマ切替</button>
+
+    <script>
+      (function(){
+        let theme = localStorage.getItem('theme');
+        if (!theme) {
+          // localStorageにテーマが保存されていなければ、prefers-color-schemeで判定
+          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            theme = 'dark';
+          } else {
+            theme = 'light';
+          }
+          localStorage.setItem('theme', theme);
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+        
+        const currentThemeElem = document.getElementById('current-theme');
+        if(currentThemeElem) {
+          currentThemeElem.textContent = "Current Theme: " + theme;
+        }
+      })();
+
+      const toggleBtn = document.getElementById('theme-toggle');
+      toggleBtn?.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', nextTheme);
+        localStorage.setItem('theme', nextTheme);
+
+        const currentThemeElem = document.getElementById('current-theme');
+        if(currentThemeElem) {
+          currentThemeElem.textContent = "Current Theme: " + nextTheme;
+        }
+      });
+    </script>
+  </body>
+</html>

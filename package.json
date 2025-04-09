@@ -7,6 +7,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "test": "wrangler dev",
+    "log": "wrangler tail",
     "deploy": "npx wrangler deploy --assets=./dist"
   },
   "dependencies": {
