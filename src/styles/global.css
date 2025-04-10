@@ -29,20 +29,31 @@ body {
 /* 見出し・段落・リスト間の余白を調整 */
 h1, h2, h3, h4, h5, h6,
 p, ul, ol, li {
-    margin-top: 0;
+    margin-top: var(--spacing-sm);
     margin-bottom: var(--spacing-sm);
-}
-
-ul, ol {
-    padding-left: var(--list-indent);
 }
 
 h1, h2 {
     font-weight: var(--font-weight-heading);
 }
 
+h2 {
+    text-decoration: underline;
+}
+
+ul, ol {
+    padding-left: var(--list-indent);
+}
+
 a {
     color: var(--link-color);
+}
+
+pre {
+    background-color: var(--bg-color);
+    border: solid 1.75px var(--text-color);
+    padding: 1rem;
+    border-radius: .4rem;
 }
 
 .responsive-container {
@@ -59,7 +70,7 @@ a {
     width: 2rem; height: 2rem;
     top: var(--list-indent); right: var(--list-indent);
     color: var(--text-color);
-    border: none;
+    border: solid 1.75px var(--text-color);
     cursor: pointer;
     transition: all 0.15s;
     background-color: transparent;

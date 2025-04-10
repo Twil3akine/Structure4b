@@ -5,6 +5,8 @@ import react from '@astrojs/react';
 // @ts-ignore
 import { fileURLToPath } from 'url';
 import cloudflare from '@astrojs/cloudflare';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import svgr from 'vite-plugin-svgr';
 
 // https://astro.build/config
@@ -12,17 +14,21 @@ export default defineConfig({
     output: 'server',
     adapter: cloudflare(),
     integrations: [
-        mdx()
+        mdx({
+            remarkPlugins: [remarkMath],
+            rehypePlugins: [rehypeKatex],
+        }),
+        react(),
     ],
     markdown: {
         shikiConfig: {
-            theme: 'github-dark',
+            theme: 'dracula',
             // @ts-ignore
             langs: ['c'],
         },
     },
     vite: {
-        base: '/',
+        // base: '/',
         server: {
             host: '0.0.0.0',
             watch: {
