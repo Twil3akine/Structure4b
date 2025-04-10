@@ -45,6 +45,13 @@ a {
     color: var(--link-color);
 }
 
+pre {
+    background-color: var(--bg-color);
+    border: solid 1.75px var(--text-color);
+    padding: 1rem;
+    border-radius: .4rem;
+}
+
 .responsive-container {
     display: grid;
     width: 100%;
