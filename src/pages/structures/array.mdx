@@ -1,5 +1,6 @@
 import Layout from '@/layouts/Layout.astro';
 import Notion from '@/components/Notion.astro';
+import TextDecoration from '@/components/TextDecoration.astro';
 
 <Layout>
 
@@ -24,13 +25,13 @@ import Notion from '@/components/Notion.astro';
 
 それは配列の仕組みを考えてみると、単純な話で、下図のようにメモリ上に物理的に連続して、配置しているからです。
 
-![メモリ上でint型配列が連続して並んでいる様子の図]()
+![メモリ上でint型配列が連続して並んでいる様子の図](/images/structures/メモリ上でint型配列が連続して並んでいる様子の図.png)
 
 例えば、C言語における int型(=4bytes) の配列 A を作ったとき、先頭(=A[0])がメモリ上の 0x0000 に存在するとき、A[i]のメモリ上の位置は 0x0000 + i*4 となり、これは O(1) で計算が可能です。
 
 ここから考えると、int型(=4bytes)ではなく、char型(=1byte)の配列 B を作り、先頭(=B[0])がメモリ上の 0x0000 に存在するとき、B[i]のメモリ上の位置は 0x0000 + i*1 となるのでしょうか。
 
-答えは Yes です。
+答えは <TextDecoration note>Yes</TextDecoration> です。
 
 どの型であっても、i番目の要素のメモリ上の位置は、(先頭アドレス) + i*(型のサイズ) で計算できます。
 なお、型のサイズを知りたいときは、sizeof演算子を使うといいです。
@@ -64,7 +65,7 @@ int ary[5];
 ```
 と実装すると、どうなるでしょうか。空の要素が5つ入った配列ができるのでしょうか。
 
-答えは No です。
+答えは <TextDecoration error>No</TextDecoration> です。
 
 C言語では、配列の宣言を行っただけでは、中身の初期化はされません。
 そのため、上記のコードを実行すると、メモリ上のランダムな値が入った配列ができてしまいます。
