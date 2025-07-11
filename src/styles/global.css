@@ -8,6 +8,8 @@
     --container-gap: 1rem;
     --container-padding: 1rem;
 
+    --text-size: 24px;
+
     --bg-color: #ffffff;
     --text-color: #000000;
     --link-color: #55e;
@@ -21,9 +23,16 @@
 body {
     margin: 0;
     padding: 0;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     background-color: var(--bg-color);
     color: var(--text-color);
+}
+
+h1 {
+    font-size: var(--);
 }
 
 /* 見出し・段落・リスト間の余白を調整 */
@@ -37,12 +46,20 @@ h1, h2 {
     font-weight: var(--font-weight-heading);
 }
 
-h2 {
-    text-decoration: underline;
-}
-
 ul, ol {
     padding-left: var(--list-indent);
+}
+
+h1 {
+    font-size: calc(var(--text-size) * 1.5);
+}
+
+h2 {
+    font-size: var(--text-size);
+}
+
+a, p, li {
+    font-size: calc(var(--text-size)  * .7);
 }
 
 a {
@@ -54,6 +71,12 @@ pre {
     border: solid 1.75px var(--text-color);
     padding: 1rem;
     border-radius: .4rem;
+}
+
+img {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .responsive-container {

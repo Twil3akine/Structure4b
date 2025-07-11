@@ -24,4 +24,14 @@ pnpm-debug.log*
 .idea/
 
 # vscode settings folder
+<<<<<<< Updated upstream
 .vscode/
+=======
+.vscode/
+
+# bun settings file
+bun.lock
+
+# .exe file
+**/*.exe
+>>>>>>> Stashed changes
