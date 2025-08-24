@@ -28,3 +28,10 @@ pnpm-debug.log*
 
 # bun settings file
 bun.lock
+
+# .exe file
+**/*.exe
+.vscode/
+
+# bun settings file
+bun.lock

@@ -1,0 +1,21 @@
+---
+const { caution, note, error } = Astro.props;
+let variant: 'caution' | 'note' | 'error' = 'caution';
+if (caution) {
+	variant = "caution";
+} else if (note) {
+	variant = "note";
+} else if (error) {
+	variant = "error";
+}
+const colors = {
+	caution: "#EFCF9D",     // 黄系
+	note: "#AFE896",		// 緑系
+	error: "#EFCFDF"		// 赤系
+};
+const textColor = colors[variant]; // デフォルトは caution
+---
+
+<span style={`color: ${textColor}; font-weight: bold;`}>
+	<slot />
+</span>
