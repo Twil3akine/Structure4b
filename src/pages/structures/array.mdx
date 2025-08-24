@@ -25,7 +25,7 @@ import TextDecoration from '@/components/TextDecoration.astro';
 
 それは配列の仕組みを考えると、単純な話で、下の図のようにメモリ上に連続して確保しているからです。
 
-![メモリ上でint型配列が連続して並んでいる様子の図](/images/structures/メモリ上でint型配列が連続して並んでいる様子の図.png)
+![メモリ上でint型配列が連続して並んでいる様子の図](/images/structures/array_image1.png)
 
 例えば、int型(=4bytes) の配列 A を作ったとき、先頭(=A[0])がメモリ上の 0x0000 に存在するとき、A[i]のメモリ上の位置は 0x0000 + i*4 となり、これは O(1) で計算が可能です。
 
