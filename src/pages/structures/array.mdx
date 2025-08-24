@@ -34,12 +34,12 @@ import TextDecoration from '@/components/TextDecoration.astro';
 答えは <TextDecoration note>Yes</TextDecoration> です。
 
 どの型であっても、i番目の要素のメモリ上の位置は、(先頭アドレス) + i*(型のサイズ) で計算できます。
-なお、型のサイズを知りたいときは、sizeof演算子を使うといいです。
+なお、型のサイズを知りたいときは、sizeof演算子を使うといいです。(sizeof演算子の返す型はsize_t型なので、printfでは%zuと記述)
 
 ```c
-printf("%d\n", sizeof(int)); // 4
-printf("%d\n", sizeof(char)); // 1
-printf("%d\n", sizeof(long long)); // 8
+printf("%zu\n", sizeof(int)); // 4
+printf("%zu\n", sizeof(char)); // 1
+printf("%zu\n", sizeof(long long)); // 8
 ```
 
 そして、ここからデメリットである要素の挿入/削除に O(n-i) (nは全体の要素数、iは挿入/削除する要素の位置) 必要な理由を考えることができます。
@@ -65,7 +65,7 @@ int ary[5];
 ```
 と実装すると、どうなるでしょうか。空の要素が5つ入った配列ができるのでしょうか。
 
-答えは <TextDecoration error>No</TextDecoration> です。
+基本的に答えは <TextDecoration error>No</TextDecoration> です。
 
 C言語では、配列の宣言を行っただけでは、中身の初期化はされません。
 そのため、上記のコードを実行すると、メモリ上のランダムな値が入った配列ができてしまいます。
@@ -75,7 +75,11 @@ C言語では、配列の宣言を行っただけでは、中身の初期化は�
 int ary[5] = {0};
 ```
 
-また、ary[i]の値を取得したいとき、2種類の書き方が可能であり、上の書き方が一般的だと思います。
+<Notion error>
+    ただし、グローバル変数やstaticとして宣言した場合は中身はすべて0で初期化されます。
+</Notion>
+
+また、ary[i]の値を取得したいとき、下のコードブロック内の2種類の書き方が可能であり、上の書き方が一般的だと思います。
 下の書き方はary自体を先頭ポインタとして扱い、ポインタ演算を行っています。
 
 ```c
@@ -84,12 +88,5 @@ int ary[5] = {10, 20, 30, 40, 50};
 printf("%d\n", ary[3]); // 40
 printf("%d\n", *(ary+3)); // 40
 ```
-
-<Notion error>
-
-注意点なのですが、C言語は 0-indexed言語です。
-i番目の要素にアクセスしたいとき、index は i-1 にする必要があります。
-
-</Notion>
 
 </Layout>
