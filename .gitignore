@@ -35,3 +35,6 @@ bun.lock
 
 # bun settings file
 bun.lock
+
+# source code files
+programs/*.exe
