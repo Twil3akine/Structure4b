@@ -34,12 +34,12 @@ import TextDecoration from '@/components/TextDecoration.astro';
 答えは <TextDecoration note>Yes</TextDecoration> です。
 
 どの型であっても、i番目の要素のメモリ上の位置は、(先頭アドレス) + i*(型のサイズ) で計算できます。
-なお、型のサイズを知りたいときは、sizeof演算子を使うといいです。
+なお、型のサイズを知りたいときは、sizeof演算子を使うといいです。(sizeof演算子の返す型はsize_t型なので、printfでは%zuと記述)
 
 ```c
-printf("%d\n", sizeof(int)); // 4
-printf("%d\n", sizeof(char)); // 1
-printf("%d\n", sizeof(long long)); // 8
+printf("%zu\n", sizeof(int)); // 4
+printf("%zu\n", sizeof(char)); // 1
+printf("%zu\n", sizeof(long long)); // 8
 ```
 
 そして、ここからデメリットである要素の挿入/削除に O(n-i) (nは全体の要素数、iは挿入/削除する要素の位置) 必要な理由を考えることができます。
