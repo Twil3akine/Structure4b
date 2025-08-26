@@ -1,0 +1,23 @@
+import Layout from '@/layouts/Layout.astro';
+import Notion from '@/components/Notion.astro';
+import TextDecoration from '@/components/TextDecoration.astro';
+
+<Layout>
+
+# 二分木
+
+[もどる](/structures)
+[トップにもどる](/)
+
+## 概要
+
+二分木とは、基本的な木構造を持つデータ構造です。
+
+- メリット
+    - ノード数が N 個だった時、それぞれの要素を基本的に最大 logN で取得可能
+    - 常にあるルールに沿って、ソートされた状態にされている
+- デメリット
+	- 削除の実装が少し複雑
+    - 何も対策をしていなかったとき、ノードの挿入順によって上記のメリットがなくなってしまう可能性がある。
+
+</Layout>
